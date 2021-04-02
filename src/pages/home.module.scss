@@ -45,7 +45,18 @@
         font-size: 20px;
       }
     }
+  }
 
+  .loadMoreButton {
+    margin-top: 3.55rem;
+    border: 0;
+    background: transparent;
+    color: var(--highlight);
+    font-weight: 600;
+    transition: filter 0.2s;
 
+    &:hover {
+      filter: brightness(0.8);
+    }
   }
 }
