@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { ReactElement, useEffect, useMemo, useState } from 'react';
+import { ReactElement, useMemo } from 'react';
 import Prismic from '@prismicio/client';
 import { ptBR } from 'date-fns/locale';
 import { format } from 'date-fns';
@@ -14,6 +14,7 @@ import Header from '../../components/Header';
 
 import commonStyles from '../../styles/common.module.scss';
 import styles from './post.module.scss';
+import { Comments } from '../../components/Comments';
 
 interface Post {
   first_publication_date: string | null;
@@ -94,6 +95,7 @@ export default function Post({ post }: PostProps): ReactElement {
             </section>
           ))}
         </main>
+        <Comments />
       </div>
     </>
   );
