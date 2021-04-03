@@ -1,16 +1,15 @@
-import { ReactElement, useEffect } from 'react';
+import { ReactElement, useEffect, useRef } from 'react';
 import utteranceScript from '../../services/utterances';
 
 export function Comments(): ReactElement {
-  return (
-    <div
-      id="commentsComponent"
-      ref={elem => {
-        if (!elem) {
-          return;
-        }
-        elem.appendChild(utteranceScript());
-      }}
-    />
-  );
+  const commentsDiv = useRef<HTMLDivElement>();
+
+  useEffect(() => {
+    const script = utteranceScript();
+    if (commentsDiv) {
+      commentsDiv.current.appendChild(script);
+    }
+  }, []);
+
+  return <div ref={commentsDiv} />;
 }

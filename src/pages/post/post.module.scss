@@ -35,6 +35,14 @@
   }
 }
 
+.edittedTime {
+  display: block;
+  font-style: italic;
+  color: var(--info);
+  font-size: 0.77rem;
+  margin: 1rem 0 3rem;
+}
+
 .post {
   h2 {
     margin-top: 2rem;
@@ -48,3 +56,31 @@
   margin-bottom: 5rem;
 }
 
+.footer {
+  border-top: 1px solid var(--info);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 3rem 0;
+
+  & div:last-child {
+    text-align: right;
+  }
+
+  div {
+    max-width: 250px;
+
+    h4 {
+      font-weight: 400;
+      line-height: 1.3rem;
+    }
+
+    span {
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--highlight);
+      font-weight: 600;
+    }
+
+  }
+}
